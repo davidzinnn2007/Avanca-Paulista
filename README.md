@@ -3,7 +3,25 @@
 
 ---
 
-## 1. Apresentação
+## 1. Identificação do grupo
+
+**Grupo 1 — Jovem Paulista**
+
+**Tema 1 — Mentoria, Emprego e Protagonismo Juvenil**
+
+### Integrantes
+
+| Nº | Nome | Matrícula |
+|---|---|---|
+| 1 | Caio Peryandro Tavares | 01756197 |
+| 2 | David Rodrigues | 01847148 |
+| 3 | Igor Bernardo | 01846617 |
+| 4 | Roberto Eugênio Palácios Gomes | 01241270 |
+| 5 | Ruan Luiz | 01821025 |
+
+---
+
+## 2. Apresentação
 
 O **AVANÇA PAULISTA** é um projeto acadêmico de desenvolvimento web que propõe uma plataforma digital para reunir informações sobre cursos de capacitação e oportunidades de desenvolvimento profissional.
 
@@ -11,7 +29,7 @@ A plataforma foi planejada para facilitar a navegação, organizar conteúdos po
 
 Este projeto possui caráter demonstrativo e foi desenvolvido para fins educacionais.
 
-## 2. Objetivos do projeto
+## 3. Objetivos do projeto
 
 - Apresentar uma interface organizada para consulta de cursos e oportunidades.
 - Facilitar a busca de conteúdos por área de interesse, localização e modalidade.
@@ -19,7 +37,7 @@ Este projeto possui caráter demonstrativo e foi desenvolvido para fins educacio
 - Aplicar conhecimentos de HTML, CSS e JavaScript.
 - Desenvolver uma interface com identidade visual própria e foco na usabilidade.
 
-## 3. Funcionalidades
+## 4. Funcionalidades
 
 O projeto contempla as seguintes áreas:
 
@@ -34,7 +52,7 @@ O projeto contempla as seguintes áreas:
 
 > **Observação:** os cursos, vagas e oportunidades desta versão são ilustrativos e não representam ofertas reais ou disponibilidade confirmada.
 
-## 4. Tecnologias utilizadas
+## 5. Tecnologias utilizadas
 
 | Tecnologia | Finalidade |
 |---|---|
@@ -45,7 +63,7 @@ O projeto contempla as seguintes áreas:
 
 O projeto utiliza tecnologias nativas da web, sem necessidade de frameworks externos para sua execução.
 
-## 5. Estrutura de pastas
+## 6. Estrutura de pastas
 
 ```text
 avanca-paulista/
