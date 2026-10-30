@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidades | Avança Paulista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="../index.html" class="logo"><span class="logo-symbol">A</span><span class="logo-text">AVANÇA <strong>PAULISTA</strong><small>DESENVOLVIMENTO E OPORTUNIDADES</small></span></a>
+
+    <nav class="nav">
+        <a href="../index.html">Início</a>
+        <a href="oportunidades.html" class="active-link">Oportunidades</a>
+        <a href="../index.html#cursos">Cursos</a>
+        <a href="../index.html#sobre">Sobre</a>
+    </nav>
+
+    <div class="header-actions">
+        <a href="login.html" class="login-link">Entrar</a>
+        <a href="cadastro.html" class="button-primary">Criar conta</a>
+    </div>
+</header>
+
+<main>
+    <section class="opportunities-hero">
+        <span class="tag">EXPLORE NOVOS CAMINHOS</span>
+        <h1>Oportunidades para <span>ir mais longe.</span></h1>
+        <p>Encontre vagas, estágios e cursos para desenvolver suas habilidades e construir seu futuro.</p>
+    </section>
+
+    <section class="opportunities-content">
+        <div class="search-box">
+            <span>⌕</span>
+            <input type="search" id="searchInput" placeholder="Pesquise por vaga, curso ou palavra-chave...">
+            <button type="button" id="searchButton">Pesquisar</button>
+        </div>
+
+        <div class="filter-area">
+            <div>
+                <strong class="filter-title">Explore por categoria</strong>
+                <p>Encontre o que procura.</p>
+            </div>
+
+            <div class="filter-buttons">
+                <button type="button" class="filter-button active" data-filter="todos">Todas</button>
+                <button type="button" class="filter-button" data-filter="emprego">Empregos</button>
+                <button type="button" class="filter-button" data-filter="estagio">Estágios</button>
+                <button type="button" class="filter-button" data-filter="curso">Cursos</button>
+            </div>
+        </div>
+
+        <div class="results-header">
+            <h2>Oportunidades disponíveis</h2>
+            <span id="resultsCount"></span>
+        </div>
+
+        <div class="opportunities-list" id="opportunitiesList">
+
+            <article class="opportunity-item" data-id="op-1" data-category="emprego">
+                <div class="opportunity-top">
+                    <span class="opportunity-type">EMPREGO</span>
+                    <span class="opportunity-location">Paulista - PE</span>
+                </div>
+                <h3>Assistente Administrativo</h3>
+                <p class="company-name">Empresa demonstrativa</p>
+                <p class="opportunity-description">Atuação com organização de documentos, atendimento e rotinas administrativas.</p>
+                <div class="opportunity-details"><span>Tempo integral</span><span>Ensino médio</span></div>
+                <button type="button" class="opportunity-link" data-save aria-pressed="false">☆ Salvar oportunidade</button>
+            </article>
+
+            <article class="opportunity-item" data-id="op-2" data-category="estagio">
+                <div class="opportunity-top">
+                    <span class="opportunity-type internship">ESTÁGIO</span>
+                    <span class="opportunity-location">Recife - PE</span>
+                </div>
+                <h3>Estágio em Tecnologia</h3>
+                <p class="company-name">Empresa demonstrativa</p>
+                <p class="opportunity-description">Vaga para estudantes interessados em desenvolvimento, tecnologia e inovação.</p>
+                <div class="opportunity-details"><span>Meio período</span><span>Estudantes</span></div>
+                <button type="button" class="opportunity-link" data-save aria-pressed="false">☆ Salvar oportunidade</button>
+            </article>
+
+            <article class="opportunity-item" data-id="op-3" data-category="curso">
+                <div class="opportunity-top">
+                    <span class="opportunity-type course">CURSO</span>
+                    <span class="opportunity-location">Online</span>
+                </div>
+                <h3>Introdução à Programação</h3>
+                <p class="company-name">Capacitação demonstrativa</p>
+                <p class="opportunity-description">Aprenda lógica de programação e dê os primeiros passos na tecnologia.</p>
+                <div class="opportunity-details"><span>Online</span><span>Iniciante</span></div>
+                <button type="button" class="opportunity-link" data-save aria-pressed="false">☆ Salvar oportunidade</button>
+            </article>
+
+            <article class="opportunity-item" data-id="op-4" data-category="emprego">
+                <div class="opportunity-top">
+                    <span class="opportunity-type">EMPREGO</span>
+                    <span class="opportunity-location">Paulista - PE</span>
+                </div>
+                <h3>Auxiliar de Atendimento</h3>
+                <p class="company-name">Empresa demonstrativa</p>
+                <p class="opportunity-description">Atendimento ao público, suporte ao cliente e organização de atividades.</p>
+                <div class="opportunity-details"><span>Tempo integral</span><span>Ensino médio</span></div>
+                <button type="button" class="opportunity-link" data-save aria-pressed="false">☆ Salvar oportunidade</button>
+            </article>
+
+            <article class="opportunity-item" data-id="op-5" data-category="estagio">
+                <div class="opportunity-top">
+                    <span class="opportunity-type internship">ESTÁGIO</span>
+                    <span class="opportunity-location">Paulista - PE</span>
+                </div>
+                <h3>Estágio Administrativo</h3>
+                <p class="company-name">Empresa demonstrativa</p>
+                <p class="opportunity-description">Experiência em atividades administrativas e organização de processos.</p>
+                <div class="opportunity-details"><span>Meio período</span><span>Estudantes</span></div>
+                <button type="button" class="opportunity-link" data-save aria-pressed="false">☆ Salvar oportunidade</button>
+            </article>
+
+            <article class="opportunity-item" data-id="op-6" data-category="curso">
+                <div class="opportunity-top">
+                    <span class="opportunity-type course">CURSO</span>
+                    <span class="opportunity-location">Online</span>
+                </div>
+                <h3>Marketing Digital</h3>
+                <p class="company-name">Capacitação demonstrativa</p>
+                <p class="opportunity-description">Conheça estratégias de marketing, redes sociais e divulgação de negócios.</p>
+                <div class="opportunity-details"><span>Online</span><span>Iniciante</span></div>
+                <button type="button" class="opportunity-link" data-save aria-pressed="false">☆ Salvar oportunidade</button>
+            </article>
+
+        </div>
+
+        <div class="empty-results" id="emptyResults" hidden>
+            <h3>Nenhuma oportunidade encontrada.</h3>
+            <p>Tente outro termo ou selecione outra categoria.</p>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <a href="../index.html" class="logo"><span class="logo-symbol">A</span><span class="logo-text">AVANÇA <strong>PAULISTA</strong><small>DESENVOLVIMENTO E OPORTUNIDADES</small></span></a>
+    <p>Conectando pessoas a novas oportunidades.</p>
+    <span>© 2026 Avança Paulista. Projeto demonstrativo.</span>
+</footer>
+<script src="../js/ui.js" defer></script>
+<script src="../js/script.js" defer></script>
+</body>
+</html>

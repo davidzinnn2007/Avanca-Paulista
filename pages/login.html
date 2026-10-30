@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Acesse sua conta na plataforma AVANÇA PAULISTA.">
+    <meta name="theme-color" content="#0D3F70">
+
+    <title>Entrar | AVANÇA PAULISTA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #F5F7FA;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        /* FAIXA INSTITUCIONAL */
+
+        .login-topbar {
+            background: #0D3F70;
+            color: #FFFFFF;
+        }
+
+        .login-topbar-content {
+            width: min(1180px, calc(100% - 40px));
+            min-height: 34px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11px;
+        }
+
+        /* CABEÇALHO */
+
+        .login-header {
+            min-height: 82px;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #FFFFFF;
+            border-bottom: 1px solid #E1E8EF;
+            box-shadow: 0 4px 18px rgba(9,45,80,.045);
+        }
+
+        .login-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .login-brand-symbol {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            border-bottom: 4px solid #FFC52E;
+            background: #14518D;
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .login-brand-text {
+            display: flex;
+            flex-direction: column;
+            color: #0D3F70;
+            font-size: 14px;
+            line-height: 1.05;
+            font-weight: 900;
+        }
+
+        .login-brand-text strong {
+            color: #14518D;
+            font-size: 16px;
+        }
+
+        .login-brand-text small {
+            margin-top: 5px;
+            color: #718096;
+            font-size: 8px;
+            letter-spacing: 1px;
+        }
+
+        .login-register-link {
+            color: #647589;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .login-register-link strong {
+            color: #14518D;
+            font-weight: 800;
+        }
+
+        .login-register-link:hover strong {
+            text-decoration: underline;
+        }
+
+        /* CONTEÚDO */
+
+        .auth-container {
+            width: min(1000px, calc(100% - 40px));
+            flex: 1;
+            margin: auto;
+            padding: 55px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        /* PAINEL DE APRESENTAÇÃO */
+
+        .welcome {
+            padding: 20px 0;
+        }
+
+        .welcome .tag {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 13px;
+            border: 1px solid #D5E3EF;
+            border-radius: 30px;
+            background: #EAF3FA;
+            color: #14518D;
+            font-size: 10px;
+            font-weight: 850;
+            letter-spacing: 1.2px;
+        }
+
+        .welcome h1 {
+            max-width: 470px;
+            margin-bottom: 20px;
+            color: #0D3F70;
+            font-size: clamp(34px, 4vw, 48px);
+            font-weight: 900;
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+        }
+
+        .welcome h1 span {
+            color: #14518D;
+        }
+
+        .welcome > p {
+            max-width: 430px;
+            color: #718096;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .features div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #34465A;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .features div::before {
+            content: "✓";
+            width: 25px;
+            height: 25px;
+            display: grid;
+            place-items: center;
+            border-radius: 7px;
+            background: #E4F6F2;
+            color: #16836C;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        /* CARTÃO DE LOGIN */
+
+        .form-card {
+            width: 100%;
+            max-width: 440px;
+            margin-left: auto;
+            padding: 38px;
+            border: 1px solid #E1E8EF;
+            border-radius: 17px;
+            background: #FFFFFF;
+            box-shadow: 0 18px 48px rgba(9,45,80,.09);
+        }
+
+        .form-header {
+            margin-bottom: 28px;
+        }
+
+        .form-header h2 {
+            margin-bottom: 9px;
+            color: #0D3F70;
+            font-size: 25px;
+            font-weight: 850;
+            letter-spacing: -.6px;
+        }
+
+        .form-header p {
+            color: #8492A2;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .input-group {
+            margin-bottom: 19px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #34465A;
+            font-size: 11px;
+            font-weight: 750;
+        }
+
+        .input-group input {
+            width: 100%;
+            min-height: 48px;
+            padding: 12px 14px;
+            border: 1px solid #DCE4EC;
+            border-radius: 8px;
+            background: #FFFFFF;
+            color: #26384B;
+            font-family: inherit;
+            font-size: 12px;
+            outline: none;
+            transition: .2s;
+        }
+
+        .input-group input:focus {
+            border-color: #14518D;
+            box-shadow: 0 0 0 3px rgba(20,81,141,.10);
+        }
+
+        .input-group input::placeholder {
+            color: #A1ADBA;
+        }
+
+        /* OPÇÕES */
+
+        .login-options {
+            margin: 4px 0 23px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #718096;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .remember input {
+            accent-color: #14518D;
+        }
+
+        .login-options a {
+            color: #14518D;
+            font-size: 10px;
+            font-weight: 750;
+            text-decoration: none;
+        }
+
+        .login-options a:hover {
+            text-decoration: underline;
+        }
+
+        /* BOTÃO */
+
+        .submit-button {
+            width: 100%;
+            min-height: 49px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 8px;
+            background: #14518D;
+            color: #FFFFFF;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .submit-button:hover {
+            background: #0D3F70;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(20,81,141,.17);
+        }
+
+        .form-footer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #E9EEF3;
+            color: #8492A2;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .form-footer a {
+            color: #14518D;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* RODAPÉ */
+
+        .auth-footer {
+            padding: 20px;
+            background: #092F55;
+            color: rgba(255,255,255,.7);
+            font-size: 10px;
+            text-align: center;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 760px) {
+            .auth-container {
+                max-width: 480px;
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 35px 0 45px;
+            }
+
+            .welcome {
+                padding: 5px 0;
+            }
+
+            .welcome h1 {
+                font-size: 35px;
+            }
+
+            .features {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-top: 22px;
+            }
+
+            .form-card {
+                max-width: 100%;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-topbar-content {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .login-topbar-content span:last-child {
+                display: none;
+            }
+
+            .login-header {
+                min-height: 72px;
+                padding: 0 16px;
+            }
+
+            .login-brand-symbol {
+                width: 40px;
+                height: 40px;
+                font-size: 21px;
+            }
+
+            .login-brand-text {
+                font-size: 12px;
+            }
+
+            .login-brand-text strong {
+                font-size: 14px;
+            }
+
+            .login-brand-text small {
+                font-size: 6px;
+            }
+
+            .login-register-link {
+                max-width: 130px;
+                font-size: 10px;
+                text-align: right;
+            }
+
+            .auth-container {
+                width: calc(100% - 30px);
+                padding: 28px 0 38px;
+            }
+
+            .welcome h1 {
+                font-size: 31px;
+            }
+
+            .welcome > p {
+                font-size: 12px;
+            }
+
+            .form-card {
+                padding: 27px 21px;
+            }
+
+            .form-header h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body class="auth-page">
+
+    <!-- FAIXA INSTITUCIONAL -->
+    <div class="login-topbar">
+        <div class="login-topbar-content">
+            <span>Portal de oportunidades para a população</span>
+            <span>Paulista, Pernambuco</span>
+        </div>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header class="login-header">
+
+        <a href="../index.html" class="login-brand">
+
+            <span class="login-brand-symbol">A</span>
+
+            <span class="login-brand-text">
+                AVANÇA
+                <strong>PAULISTA</strong>
+                <small>DESENVOLVIMENTO E OPORTUNIDADES</small>
+            </span>
+
+        </a>
+
+        <a href="cadastro.html" class="login-register-link">
+            Não tem conta?
+            <strong>Cadastre-se</strong>
+        </a>
+
+    </header>
+
+    <main class="auth-container">
+
+        <!-- APRESENTAÇÃO -->
+        <section class="welcome">
+
+            <span class="tag">BEM-VINDO DE VOLTA</span>
+
+            <h1>
+                Continue construindo
+                <span>seu futuro.</span>
+            </h1>
+
+            <p>
+                Entre na sua conta e continue explorando oportunidades
+                para desenvolver seu potencial e avançar profissionalmente.
+            </p>
+
+            <div class="features">
+                <div>Explore oportunidades de emprego</div>
+                <div>Descubra novos cursos e capacitações</div>
+                <div>Desenvolva sua carreira</div>
+            </div>
+
+        </section>
+
+        <!-- FORMULÁRIO -->
+        <section class="form-card">
+
+            <div class="form-header">
+                <h2>Entrar na plataforma</h2>
+                <p>Informe seus dados de acesso para continuar.</p>
+            </div>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="seuemail@exemplo.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <div class="login-options">
+
+                    <label class="remember" for="remember">
+                        <input type="checkbox" id="remember" name="remember">
+                        Lembrar de mim
+                    </label>
+
+                    <a href="recuperar-senha.html" id="forgotPassword">
+                        Esqueceu a senha?
+                    </a>
+
+                </div>
+
+                <button type="submit" class="submit-button">
+                    Entrar →
+                </button>
+
+            </form>
+
+            <div class="form-footer">
+                Ainda não possui conta?
+                <a href="cadastro.html">Criar conta</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="auth-footer">
+        © 2026 AVANÇA PAULISTA. Todos os direitos reservados.
+    </footer>
+
+    <script src="../js/script.js" defer></script>
+
+</body>
+</html>

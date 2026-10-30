@@ -1,0 +1,132 @@
+
+/* =========================================
+   AVANÇA PAULISTA
+   DASHBOARD | ESTILOS COMPLEMENTARES
+========================================= */
+
+.dashboard-page {
+    min-height: 100vh;
+    background: #F5F7FA;
+}
+
+/* Organização dos painéis */
+
+.dashboard-panel,
+.dashboard-stat,
+.dashboard-welcome {
+    border: 1px solid #E1E8EF;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(13, 63, 112, 0.055);
+}
+
+.dashboard-panel {
+    background: #FFFFFF;
+}
+
+/* Tipografia */
+
+.dashboard-welcome h1,
+.dashboard-panel h2,
+.dashboard-panel h3 {
+    color: #0D3F70;
+}
+
+.dashboard-welcome p,
+.dashboard-panel p {
+    color: #718096;
+}
+
+/* Indicadores */
+
+.dashboard-stat strong,
+.saved-counter {
+    color: #14518D;
+}
+
+/* Campos */
+
+.dashboard-field input,
+.dashboard-field select {
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-field input:focus,
+.dashboard-field select:focus {
+    border-color: #14518D;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(20, 81, 141, 0.09);
+}
+
+/* Botões */
+
+.dashboard-page button,
+.dashboard-page .button-primary {
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+.dashboard-page button:focus-visible,
+.dashboard-page a:focus-visible,
+.dashboard-page input:focus-visible,
+.dashboard-page select:focus-visible {
+    outline: 3px solid rgba(32, 185, 212, 0.55);
+    outline-offset: 3px;
+}
+
+/* Oportunidades salvas */
+
+.saved-list {
+    min-width: 0;
+}
+
+.saved-list > * {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+/* Responsividade */
+
+@media (max-width: 850px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .dashboard-main {
+        width: calc(100% - 30px);
+        padding: 24px 0;
+    }
+
+    .dashboard-welcome {
+        padding: 22px 18px;
+    }
+
+    .dashboard-grid,
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-panel {
+        padding: 19px;
+    }
+
+    .dashboard-bottom {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .dashboard-welcome h1 {
+        font-size: 24px;
+    }
+
+    .dashboard-stat {
+        padding: 14px;
+    }
+
+    .dashboard-panel {
+        padding: 16px;
+    }
+}
