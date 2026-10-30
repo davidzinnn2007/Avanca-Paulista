@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recupere o acesso à sua conta no AVANÇA PAULISTA.">
+    <title>Recuperar senha | AVANÇA PAULISTA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/recuperar-senha.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <meta name="theme-color" content="#0D3F70">
+</head>
+<body class="auth-page recovery-page">
+<header class="header">
+    <a href="../index.html" class="logo"><img src="../assets/logo-avanca-paulista.png" alt="" class="brand-mark"></a>
+    <a href="login.html" class="login-link">Voltar para <strong>entrar</strong></a>
+</header>
+<main class="recovery-container">
+    <section class="form-card recovery-card">
+        <div class="form-header">
+            <span class="recovery-tag">ACESSO À CONTA</span>
+            <h1>Recuperar senha</h1>
+            <p>Informe o e-mail usado no cadastro e defina uma nova senha.</p>
+        </div>
+        <div class="demo-notice">
+            <strong>Versão demonstrativa</strong>
+            <span>Esta etapa funciona neste navegador. Ainda não há envio de e-mail ou validação por código.</span>
+        </div>
+        <form id="recoveryForm">
+            <div class="input-group">
+                <label for="email">E-mail cadastrado</label>
+                <input type="email" id="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+            </div>
+            <div id="passwordFields" class="password-fields" hidden>
+                <div class="input-group">
+                    <label for="newPassword">Nova senha</label>
+                    <input type="password" id="newPassword" placeholder="Mínimo de 8 caracteres" minlength="8" autocomplete="new-password">
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirmar nova senha</label>
+                    <input type="password" id="confirmPassword" placeholder="Digite a senha novamente" minlength="8" autocomplete="new-password">
+                </div>
+            </div>
+            <p id="recoveryMessage" class="recovery-message" role="status" aria-live="polite"></p>
+            <button type="submit" class="submit-button" id="recoveryButton">Continuar</button>
+        </form>
+        <div class="form-footer">Lembrou sua senha? <a href="login.html">Voltar ao login</a></div>
+    </section>
+</main>
+<footer class="auth-footer">© 2026 AVANÇA PAULISTA. Projeto independente e demonstrativo.</footer>
+<script src="../js/ui.js" defer></script>
+<script src="../js/recuperar-senha.js" defer></script>
+</body>
+</html>

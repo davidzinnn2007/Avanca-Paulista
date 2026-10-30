@@ -1,0 +1,12 @@
+.recovery-container { width: min(100% - 40px, 520px); margin: 55px auto 70px; }
+.recovery-card { width: 100%; }
+.recovery-card .form-header h1 { color: var(--blue-dark); font-family: 'Manrope', sans-serif; font-size: clamp(1.7rem, 4vw, 2.2rem); margin-bottom: 10px; }
+.recovery-card .form-header p { color: var(--muted); margin-bottom: 22px; }
+.recovery-tag { display: inline-block; color: var(--blue); background: var(--blue-soft); border-left: 4px solid var(--yellow); padding: 7px 11px; border-radius: 4px; font-size: .72rem; font-weight: 800; letter-spacing: .08em; margin-bottom: 15px; }
+.password-fields[hidden] { display: none; }
+.password-fields { display: grid; gap: 2px; }
+.recovery-message { min-height: 22px; margin: 10px 0 14px; font-size: .9rem; line-height: 1.5; }
+.recovery-message.error { color: var(--blue-dark); font-weight: 700; }
+.recovery-message.success { color: var(--green); font-weight: 700; }
+@media (max-width: 600px) { .recovery-container { width: min(100% - 28px, 520px); margin: 28px auto 45px; } }
+:root[data-theme="dark"] .recovery-page{background:var(--page);color:var(--ink)}

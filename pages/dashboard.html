@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acompanhe seu perfil e suas oportunidades no Avança Paulista.">
+    <title>Minha área | AVANÇA PAULISTA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <meta name="theme-color" content="#0D3F70">
+</head>
+
+<body class="dashboard-page" data-requires-auth>
+
+<header class="header">
+
+    <a href="../index.html" class="logo"><img src="../assets/logo-avanca-paulista.png" alt="" class="brand-mark"></a>
+
+    <nav class="nav">
+        <a href="../index.html">Início</a>
+        <a href="oportunidades.html">Oportunidades</a>
+        <a href="dashboard.html" class="active-link">Minha área</a>
+    </nav>
+
+    <div class="header-actions">
+        <button type="button" class="dashboard-logout" id="logoutButton">
+            Sair
+        </button>
+    </div>
+
+</header>
+
+<main class="dashboard-main">
+
+    <section class="dashboard-welcome">
+        <div>
+            <span class="dashboard-eyebrow">MINHA ÁREA</span>
+            <h1>Olá, <span id="userName">jovem!</span></h1>
+            <p>
+                Acompanhe suas oportunidades e continue construindo
+                seu caminho profissional.
+            </p>
+        </div>
+
+        <div class="dashboard-welcome-icon">AP</div>
+    </section>
+
+    <section class="dashboard-stats">
+
+        <article class="dashboard-stat">
+            <div class="stat-icon blue-icon">⌕</div>
+            <div>
+                <span>Oportunidades disponíveis</span>
+                <strong id="availableCount">0</strong>
+            </div>
+        </article>
+
+        <article class="dashboard-stat">
+            <div class="stat-icon yellow-icon">☆</div>
+            <div>
+                <span>Oportunidades salvas</span>
+                <strong id="savedCount">0</strong>
+            </div>
+        </article>
+
+        <article class="dashboard-stat">
+            <div class="stat-icon green-icon">✓</div>
+            <div>
+                <span>Perfil</span>
+                <strong id="profileStatus">Incompleto</strong>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="dashboard-grid">
+
+        <div class="dashboard-panel profile-panel">
+
+            <div class="dashboard-panel-heading">
+                <div>
+                    <span class="dashboard-eyebrow">SEUS DADOS</span>
+                    <h2>Meu perfil</h2>
+                </div>
+
+                <span class="profile-avatar" id="profileAvatar">U</span>
+            </div>
+
+            <form id="profileForm">
+
+                <div class="dashboard-field">
+                    <label for="profileName">Nome completo</label>
+                    <input
+                        type="text"
+                        id="profileName"
+                        placeholder="Seu nome"
+                        required
+                        minlength="3"
+                    >
+                </div>
+
+                <div class="dashboard-field">
+                    <label for="profileEmail">E-mail</label>
+                    <input
+                        type="email"
+                        id="profileEmail"
+                        placeholder="seuemail@email.com"
+                        required
+                    >
+                </div>
+
+                <div class="dashboard-field">
+                    <label for="profileArea">Área de interesse</label>
+
+                    <select id="profileArea">
+                        <option value="">Selecione uma área</option>
+                        <option>Tecnologia</option>
+                        <option>Administração</option>
+                        <option>Comércio</option>
+                        <option>Saúde</option>
+                        <option>Educação</option>
+                        <option>Indústria</option>
+                        <option>Outro</option>
+                    </select>
+                </div>
+
+                <p id="profileMessage" class="form-message" aria-live="polite"></p>
+
+                <button type="submit" class="button-primary profile-save">
+                    Salvar alterações
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="dashboard-panel saved-panel">
+
+            <div class="dashboard-panel-heading">
+                <div>
+                    <span class="dashboard-eyebrow">SEU ACOMPANHAMENTO</span>
+                    <h2>Oportunidades salvas</h2>
+                </div>
+
+                <span class="saved-counter" id="savedCounter">0</span>
+            </div>
+
+            <div id="savedOpportunities" class="saved-list"></div>
+
+        </div>
+
+    </section>
+
+    <section class="dashboard-bottom">
+        <div>
+            <span class="dashboard-eyebrow">SEU PRÓXIMO PASSO</span>
+            <h2>Existem novas oportunidades esperando por você.</h2>
+            <p>Explore vagas, estágios e cursos disponíveis.</p>
+        </div>
+
+        <a href="oportunidades.html" class="button-primary">
+            Ver oportunidades
+        </a>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <a href="../index.html" class="logo"><img src="../assets/logo-avanca-paulista.png" alt="" class="brand-mark"></a>
+    <p>Conectando pessoas a novas oportunidades.</p>
+    <span>© 2026 AVANÇA PAULISTA. Projeto independente e demonstrativo.</span>
+</footer>
+<script src="../js/ui.js" defer></script>
+<script src="../js/dashboard.js" defer></script>
+</body>
+</html>

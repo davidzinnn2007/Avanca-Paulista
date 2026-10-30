@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AVANÇA PAULISTA: oportunidades, capacitação e desenvolvimento profissional. Projeto independente e demonstrativo.">
+    <title>Criar conta | AVANÇA PAULISTA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <meta name="theme-color" content="#0D3F70">
+</head>
+<body class="auth-page">
+
+<header class="header">
+    <a href="../index.html" class="logo"><img src="../assets/logo-avanca-paulista.png" alt="" class="brand-mark"></a>
+    <a href="login.html" class="login-link">
+        Já tem conta? <strong>Entrar</strong>
+    </a>
+</header>
+
+<main class="auth-container">
+
+    <section class="welcome">
+        <span class="tag">FAÇA PARTE</span>
+
+        <h1>Seu futuro começa com uma <span>nova oportunidade.</span></h1>
+
+        <p>
+            Crie sua conta e descubra oportunidades de emprego,
+            cursos e desenvolvimento profissional.
+        </p>
+
+        <div class="features">
+            <div>✓ Acesso a oportunidades</div>
+            <div>✓ Desenvolvimento profissional</div>
+            <div>✓ Novos caminhos para seu futuro</div>
+        </div>
+    </section>
+
+    <section class="form-card">
+
+        <div class="form-header">
+            <h2>Criar sua conta</h2>
+            <p>Preencha seus dados para começar.</p>
+        </div>
+
+        <div class="demo-notice">
+            <strong>Versão demonstrativa</strong>
+            <span>Os dados ficam apenas neste navegador. Não use uma senha real.</span>
+        </div>
+
+        <form id="registerForm">
+
+            <div class="input-group">
+                <label for="name">Nome completo</label>
+                <input
+                    type="text"
+                    id="name"
+                    autocomplete="name"
+                    placeholder="Digite seu nome completo"
+                    required
+                    minlength="3"
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    autocomplete="email"
+                    placeholder="seuemail@exemplo.com"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input
+                    type="password"
+                    id="password"
+                    autocomplete="new-password"
+                    placeholder="Mínimo de 8 caracteres"
+                    required
+                    minlength="8"
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirmar senha</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    autocomplete="new-password"
+                    placeholder="Digite sua senha novamente"
+                    required
+                >
+            </div>
+
+            <label class="terms">
+                <input type="checkbox" id="terms" required>
+                <span>
+                    Concordo com os termos de uso e a política de privacidade.
+                </span>
+            </label>
+
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+
+            <button type="submit" class="submit-button">
+                Criar minha conta →
+            </button>
+
+        </form>
+
+        <div class="form-footer">
+            Já possui cadastro?
+            <a href="login.html">Faça login</a>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="auth-footer">
+    © 2026 AVANÇA PAULISTA. Projeto independente e demonstrativo.
+</footer>
+<script src="../js/ui.js" defer></script>
+<script src="../js/script.js" defer></script>
+</body>
+</html>
