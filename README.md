@@ -1,253 +1,276 @@
 # AVANÇA PAULISTA
 
-### Plataforma de cursos, capacitação e oportunidades profissionais
-
 <p align="center">
-  <img src="public/assets/logo-avanca-paulista.png" alt="Logo AVANÇA PAULISTA" width="260">
+  <img src="public/assets/logo-avanca-paulista.png" alt="Logotipo do AVANÇA PAULISTA" width="280" />
 </p>
 
 <p align="center">
-  <strong>Conectando pessoas a oportunidades de desenvolvimento profissional.</strong>
+  <strong>Oportunidades, capacitação e desenvolvimento profissional em um só lugar.</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18%2B-149ECA?logo=react&logoColor=white" alt="React" />
+  <img src="https://img.shields.io/badge/Vite-Frontend-646CFF?logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript&logoColor=222" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Status-Protótipo%20acadêmico-0D3F70" alt="Protótipo acadêmico" />
+</p>
+
+<p align="center">
+  <a href="#visão-geral">Visão geral</a> •
+  <a href="#funcionalidades">Funcionalidades</a> •
+  <a href="#tecnologias">Tecnologias</a> •
+  <a href="#instalação">Instalação</a> •
+  <a href="#equipe">Equipe</a>
 </p>
 
 ---
 
-## 1. Sobre o projeto
+## Visão geral
 
-O **AVANÇA PAULISTA** é um projeto acadêmico de desenvolvimento web que propõe uma plataforma digital voltada à apresentação e organização de cursos de capacitação, oportunidades profissionais e conteúdos relacionados ao desenvolvimento pessoal e profissional.
+O **AVANÇA PAULISTA** é um projeto acadêmico de desenvolvimento web que propõe reunir, em uma única plataforma, informações demonstrativas sobre oportunidades profissionais, estágios, cursos e iniciativas de desenvolvimento.
 
-A proposta é oferecer um ambiente digital intuitivo, acessível e organizado, facilitando a consulta de informações e a navegação entre diferentes áreas de interesse.
+A aplicação oferece páginas para explorar oportunidades e cursos, conhecer a proposta do projeto e acessar uma área individual. Também possui fluxos demonstrativos de cadastro, login e recuperação de senha.
 
-A plataforma reúne recursos de apresentação de oportunidades, consulta de cursos, gerenciamento de perfil e interação com conteúdos, proporcionando uma experiência integrada ao usuário.
+O objetivo é apresentar uma experiência de navegação clara, responsiva e coerente, aplicando conceitos de desenvolvimento front-end, componentização, gerenciamento de estado e navegação por rotas.
 
-O projeto possui caráter independente e demonstrativo, sendo desenvolvido para fins educacionais e aplicação prática dos conhecimentos adquiridos durante a formação acadêmica.
+> **Aviso institucional:** o AVANÇA PAULISTA é um projeto independente e acadêmico. Não representa, não substitui e não deve ser interpretado como serviço oficial da Prefeitura do Paulista ou de qualquer órgão público.
 
-## 2. Identificação acadêmica
+## Identidade visual
 
-**Grupo:** 1 — Jovem Paulista  
-**Tema:** 1 — Mentoria, Emprego e Protagonismo Juvenil
+A interface utiliza uma identidade visual baseada principalmente em tons de azul, com cores de apoio para destacar ações e informações.
 
-### Integrantes
+<p align="center">
+  <img src="assets/1.jpg" alt="Paisagem da região de Paulista utilizada como imagem visual do projeto" width="32%" />
+  <img src="assets/4.jpg" alt="Imagem urbana de Paulista" width="32%" />
+  <img src="assets/2.jpg" alt="Construção histórica da região" width="32%" />
+</p>
 
-| Nº | Nome | Matrícula |
-|:--:|---|:--:|
-| 1 | Caio Peryandro Tavares | 01756197 |
-| 2 | David Rodrigues | 01847148 |
-| 3 | Igor Bernardo | 01846617 |
-| 4 | Roberto Eugênio Palácios Gomes | 01241270 |
-| 5 | Ruan Luiz | 01821025 |
+As imagens acima fazem parte dos recursos visuais presentes no repositório. A aplicação também utiliza o logotipo e o favicon localizados em `public/assets/`.
 
-## 3. Objetivos
+## Funcionalidades implementadas
 
-- Desenvolver uma plataforma web com interface moderna e intuitiva.
-- Centralizar a apresentação de cursos e oportunidades profissionais.
-- Facilitar a consulta de conteúdos por categorias, localização e modalidade.
-- Implementar funcionalidades de cadastro e autenticação de usuários.
-- Disponibilizar uma área individual para gerenciamento de perfil.
-- Aplicar conceitos de desenvolvimento front-end, componentização e organização de código.
-- Proporcionar uma experiência responsiva em diferentes dispositivos.
-
-## 4. Funcionalidades
-
-### Página inicial
-- Apresentação da plataforma e de sua proposta.
-- Acesso às principais áreas do sistema.
-- Navegação integrada entre as seções.
-
-### Oportunidades
-- Apresentação de oportunidades profissionais.
-- Pesquisa e filtragem de conteúdos.
-- Organização por categorias e características.
-- Possibilidade de salvar oportunidades na conta do usuário.
-
-### Cursos
-- Página independente para apresentação de cursos.
-- Organização de conteúdos por áreas de interesse.
-- Apresentação de informações sobre capacitação e desenvolvimento profissional.
-
-### Sobre
-- Apresentação da proposta do AVANÇA PAULISTA.
-- Informações sobre os objetivos e a finalidade da plataforma.
-
-### Cadastro e autenticação
-- Cadastro de novos usuários.
-- Login com validação de credenciais.
-- Gerenciamento de sessão.
-- Redirecionamento conforme o estado de autenticação.
-- Atualização dinâmica do cabeçalho após login ou cadastro.
-- Encerramento de sessão por meio da opção de sair.
-
-### Minha área
-- Visualização e edição de informações do perfil.
-- Acompanhamento de oportunidades salvas.
-- Acesso aos recursos individuais do usuário.
-
-### Recuperação de senha
-- Interface para recuperação demonstrativa de acesso.
-
-### Interface e experiência do usuário
-- Layout responsivo.
-- Tema claro e escuro.
-- Navegação entre páginas utilizando rotas.
-- Identidade visual consistente em toda a plataforma.
-
-## 5. Tecnologias utilizadas
-
-| Tecnologia | Aplicação |
+| Área | Recursos disponíveis na versão atual |
 |---|---|
-| React | Construção de interfaces por componentes |
-| Vite | Ambiente de desenvolvimento e build |
-| JavaScript (ES6+) | Lógica e interatividade |
-| HTML5 | Estruturação do documento |
-| CSS3 | Estilização e responsividade |
-| React Router DOM | Gerenciamento de rotas e navegação |
-| Web Storage API | Persistência local de dados e sessões |
-| Git e GitHub | Controle de versão e colaboração |
+| Página inicial | Apresentação da plataforma, seções de destaque e acesso às principais áreas. |
+| Oportunidades | Listagem demonstrativa, pesquisa por texto, filtros por categoria e opção de salvar itens. |
+| Cursos | Página de apresentação de conteúdos e áreas de capacitação. |
+| Sobre | Apresentação da proposta, objetivos e etapas relacionadas ao projeto. |
+| Cadastro | Criação de conta demonstrativa com validação de nome, e-mail, senha e aceite dos termos. |
+| Login | Entrada em uma conta criada no próprio navegador e opção de lembrar a sessão. |
+| Recuperação de senha | Redefinição demonstrativa utilizando os dados locais do navegador. |
+| Minha área | Edição do nome e da área de interesse, consulta e remoção de oportunidades salvas e encerramento da sessão. |
+| Preferências visuais | Alternância entre tema claro e escuro, com preferência armazenada localmente. |
 
-## 6. Arquitetura e organização
+**Importante:** as oportunidades e empresas exibidas na versão atual são dados demonstrativos. Não devem ser consideradas vagas reais ou ofertas verificadas.
 
-O projeto utiliza uma estrutura baseada em componentes React, separando páginas, contextos, componentes reutilizáveis e arquivos de estilo.
+## Demonstração das telas
+
+As imagens de `assets/1.jpg` a `assets/5.jpg` são recursos visuais utilizados pelo projeto, não capturas de tela de todas as funcionalidades. Para apresentar telas reais nesta seção, adicione capturas feitas durante a execução da aplicação, por exemplo em `docs/screenshots/`, e atualize os caminhos abaixo.
+
+<!--
+Exemplo para inserir capturas reais:
+
+<p align="center">
+  <img src="docs/screenshots/home.png" alt="Página inicial" width="80%" />
+</p>
+-->
+
+## Tecnologias
+
+| Tecnologia | Utilização |
+|---|---|
+| React | Construção da interface por componentes. |
+| Vite | Servidor de desenvolvimento e geração do build. |
+| JavaScript (ES Modules) | Lógica e interatividade da aplicação. |
+| HTML5 | Estrutura do documento principal. |
+| CSS3 | Estilização, temas e responsividade. |
+| React Router DOM | Navegação entre páginas e controle de rotas. |
+| Context API | Compartilhamento dos estados de autenticação e tema. |
+| Web Storage API | Persistência demonstrativa no navegador. |
+| Git e GitHub | Versionamento e hospedagem do código-fonte. |
+
+## Estrutura do projeto
 
 ```text
-AVANCA-PAULISTA/
-│
+Avanca-Paulista/
 ├── public/
 │   └── assets/
 │       ├── favicon.svg
 │       └── logo-avanca-paulista.png
-│
 ├── src/
 │   ├── components/
 │   │   └── Layout.jsx
-│   │
 │   ├── contexts/
 │   │   ├── AuthContext.jsx
 │   │   └── ThemeContext.jsx
-│   │
 │   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── Opportunities.jsx
-│   │   ├── Courses.jsx
 │   │   ├── About.jsx
 │   │   ├── AuthPages.jsx
-│   │   └── Dashboard.jsx
-│   │
+│   │   ├── Courses.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── Home.jsx
+│   │   └── Opportunities.jsx
 │   ├── styles/
 │   │   ├── app.css
-│   │   ├── legacy.css
 │   │   ├── dashboard.css
+│   │   ├── legacy.css
 │   │   └── recovery.css
-│   │
 │   └── main.jsx
-│
+├── assets/
+│   ├── 1.jpg
+│   ├── 2.jpg
+│   ├── 3.jpg
+│   ├── 4.jpg
+│   ├── 5.jpg
+│   ├── favicon.svg
+│   └── logo-avanca-paulista.png
 ├── index.html
 ├── package.json
 ├── package-lock.json
-├── .gitignore
-└── README.md
+├── README.md
+└── README-REACT.md
 ```
 
-### Organização dos componentes
-
-- **components:** componentes compartilhados pela aplicação, como cabeçalho e rodapé.
-- **contexts:** gerenciamento global de autenticação e preferências de tema.
-- **pages:** páginas e interfaces principais da plataforma.
-- **styles:** arquivos CSS responsáveis pela identidade visual e estilização.
-- **public/assets:** imagens, logotipo e demais recursos estáticos.
-
-## 7. Instalação e execução
+## Instalação
 
 ### Pré-requisitos
 
-Antes de executar o projeto, é necessário possuir:
-
 - [Node.js](https://nodejs.org/) instalado.
-- npm, disponibilizado junto com o Node.js.
-- Git (opcional, para clonar o repositório).
+- npm, incluído na instalação do Node.js.
+- Git, caso deseje clonar o repositório.
 
-### Clonar o repositório
+Confira as versões disponíveis:
+
+```bash
+node --version
+npm --version
+```
+
+### 1. Clone o repositório
 
 ```bash
 git clone https://github.com/davidzinnn2007/Avanca-Paulista.git
 ```
 
-Entre na pasta do projeto:
+### 2. Acesse a pasta do projeto
 
 ```bash
 cd Avanca-Paulista
 ```
 
-### Instalar as dependências
+### 3. Instale as dependências
 
 ```bash
 npm install
 ```
 
-### Executar em ambiente de desenvolvimento
+### 4. Inicie o servidor de desenvolvimento
 
 ```bash
 npm run dev
 ```
 
-Após iniciar o servidor, acesse o endereço disponibilizado pelo Vite no terminal. Normalmente:
+O Vite exibirá no terminal o endereço local para acessar a aplicação. Normalmente:
 
 ```text
 http://localhost:5173
 ```
 
-### Gerar versão de produção
-
-```bash
-npm run build
-```
-
-Os arquivos otimizados serão gerados na pasta `dist/`.
-
-Para visualizar a versão de produção localmente:
-
-```bash
-npm run preview
-```
-
-## 8. Scripts disponíveis
+## Scripts disponíveis
 
 | Comando | Descrição |
 |---|---|
-| `npm install` | Instala as dependências do projeto |
-| `npm run dev` | Inicia o servidor de desenvolvimento |
-| `npm run build` | Gera a versão de produção |
-| `npm run preview` | Executa uma prévia da versão de produção |
+| `npm run dev` | Inicia o servidor de desenvolvimento. |
+| `npm run build` | Gera os arquivos otimizados para produção na pasta `dist/`. |
+| `npm run preview` | Disponibiliza uma prévia local do build de produção. |
 
-## 9. Persistência e limitações
+Para validar a geração de produção:
 
-Esta versão utiliza recursos de armazenamento do próprio navegador para demonstrar funcionalidades de cadastro, autenticação, sessão, perfil e oportunidades salvas.
+```bash
+npm run build
+npm run preview
+```
 
-**Importante:** a aplicação é exclusivamente front-end e não possui integração com uma API ou banco de dados remoto.
+## Rotas da aplicação
 
-Consequentemente:
+| Caminho | Página | Acesso |
+|---|---|---|
+| `/` | Página inicial | Público |
+| `/oportunidades` | Oportunidades | Público |
+| `/cursos` | Cursos | Público |
+| `/sobre` | Sobre | Público |
+| `/login` | Entrar | Visitantes |
+| `/cadastro` | Criar conta | Visitantes |
+| `/recuperar-senha` | Recuperar acesso | Visitantes |
+| `/dashboard` | Minha área | Requer autenticação local |
 
-- Os dados são armazenados localmente no navegador.
-- As informações não são compartilhadas automaticamente entre dispositivos.
-- A autenticação possui finalidade demonstrativa e não substitui um sistema de segurança de produção.
-- A recuperação de senha não representa um fluxo real de envio e validação por e-mail.
+Rotas desconhecidas exibem uma página de erro com opção para retornar ao início.
 
-Uma futura evolução poderá contemplar uma API, banco de dados e autenticação segura no servidor.
+## Persistência, segurança e limitações
 
-## 10. Controle de versão e colaboração
+Esta versão é um **protótipo front-end**. A estrutura atual não apresenta integração com API ou banco de dados remoto.
 
-O desenvolvimento utiliza Git para controle de versão e GitHub para hospedagem do código-fonte e colaboração entre os integrantes.
+- Contas, sessão, perfil, preferências e oportunidades salvas são mantidos no armazenamento do navegador.
+- Os dados não são sincronizados entre dispositivos ou usuários.
+- A autenticação é demonstrativa e não deve ser utilizada como mecanismo de segurança em produção.
+- A senha é transformada em hash SHA-256 no cliente. Isso não equivale ao armazenamento seguro de senhas em um servidor, com algoritmo apropriado para senhas.
+- A recuperação de senha altera o registro local e não envia e-mail nem verifica a identidade do solicitante.
+- Não utilize senhas reais ou informações pessoais sensíveis nesta versão.
 
-As dependências são definidas nos arquivos `package.json` e `package-lock.json`. A pasta `node_modules` não deve ser versionada, pois pode ser reconstruída utilizando o comando `npm install`.
+### Evoluções técnicas futuras
 
-## 11. Considerações finais
+Uma versão de produção deverá considerar:
 
-O AVANÇA PAULISTA representa a aplicação prática de conhecimentos de desenvolvimento web, organização de interfaces, componentização, navegação e gerenciamento de estado.
+1. API para regras de negócio e acesso aos dados.
+2. Banco de dados para contas, perfis e oportunidades.
+3. Autenticação e autorização implementadas no servidor.
+4. Armazenamento seguro de senhas com algoritmo apropriado.
+5. Recuperação de senha com verificação por canal confiável.
+6. Validação de dados no servidor, proteção contra abuso, logs e monitoramento.
 
-A plataforma foi estruturada para demonstrar como tecnologias modernas podem ser utilizadas na construção de soluções digitais voltadas à organização e apresentação de informações sobre capacitação e oportunidades profissionais.
+## Equipe
+
+**Grupo:** 1 — Jovem Paulista  
+**Tema:** 1 — Mentoria, Emprego e Protagonismo Juvenil
+
+| Integrante | Matrícula |
+|---|---:|
+| Caio Peryandro Tavares | 01756197 |
+| David Rodrigues | 01847148 |
+| Igor Bernardo | 01846617 |
+| Roberto Eugênio Palácios Gomes | 01241270 |
+| Ruan Luiz | 01821025 |
+
+## Contribuição e versionamento
+
+O código-fonte é versionado com Git e hospedado no GitHub. Para contribuir:
+
+1. Crie uma branch para a alteração.
+2. Mantenha cada commit focado em uma mudança.
+3. Teste as páginas e funcionalidades afetadas.
+4. Execute `npm run build` antes de abrir um pull request.
+5. Descreva o que foi alterado e como validar a mudança.
+
+Exemplos de prefixos para commits:
+
+| Prefixo | Uso |
+|---|---|
+| `feat` | Nova funcionalidade |
+| `fix` | Correção |
+| `style` | Ajustes visuais |
+| `refactor` | Refatoração |
+| `docs` | Documentação |
+| `test` | Testes |
+
+Não versione a pasta `node_modules/` nem arquivos locais que contenham dados pessoais ou segredos.
+
+## Licença
+
+Nenhuma licença de uso foi identificada na documentação atual. Até que uma licença seja definida e adicionada ao repositório, não presuma permissões de redistribuição ou reutilização do código.
 
 ---
 
 <p align="center">
-  <strong>AVANÇA PAULISTA</strong><br>
-  Projeto acadêmico de desenvolvimento web.
+  <strong>AVANÇA PAULISTA</strong><br />
+  Projeto acadêmico independente de desenvolvimento web.
 </p>
