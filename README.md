@@ -117,7 +117,6 @@ Publicações com curtidas, comentários, edição e filtros por categoria.
 <p align="center">
   <img src="docs/screenshots/mobile-home.png" alt="Página inicial no celular" width="24%" />
   <img src="docs/screenshots/mobile-oportunidades.png" alt="Oportunidades no celular" width="24%" />
-  <img src="docs/screenshots/mobile-comunidade.png" alt="Comunidade no celular" width="24%" />
 </p>
 
 ## Tecnologias
