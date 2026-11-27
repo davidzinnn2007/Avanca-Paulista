@@ -8,6 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const field = id => document.getElementById(id);
   const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  const formatCnpj = value => {
+    const digits = value.replace(/\D/g, '').slice(0, 14);
+    return digits
+      .replace(/^(\d{2})(\d)/, '$1.$2')
+      .replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3')
+      .replace(/\.(\d{3})(\d)/, '.$1/$2')
+      .replace(/(\d{4})(\d)/, "$1-$2");
+  };
+
   const setBusy = (form, busy) => {
     const button = form.querySelector('button[type="submit"]');
     if (button) { button.disabled = busy; button.setAttribute('aria-busy', String(busy)); }
@@ -17,16 +26,88 @@ document.addEventListener('DOMContentLoaded', () => {
   const registerForm = field('registerForm');
   if (registerForm) {
     const message = field('formMessage');
+    const typeButtons = [...document.querySelectorAll('.account-type-btn')];
+    const candidateFields = field('candidateFields');
+    const companyFields = field('companyFields');
+    const cnpjInput = field('cnpj');
+    const emailInput = field('email');
+    const emailLabel = field('emailLabel');
+    const submitBtn = field('submitBtn');
+    const formTitle = field('formTitle');
+    const formSubtitle = field('formSubtitle');
+    const welcomeText = field('welcomeText');
+    const welcomeFeatures = field('welcomeFeatures');
+
+    let accountType = 'candidato';
+
+    const updateAccountType = nextType => {
+      accountType = nextType === 'empresa' ? 'empresa' : 'candidato';
+      const isCompany = accountType === 'empresa';
+
+      typeButtons.forEach(btn => {
+        const active = btn.dataset.accountType === accountType;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-pressed', String(active));
+      });
+
+      if (candidateFields) candidateFields.hidden = isCompany;
+      if (companyFields) companyFields.hidden = !isCompany;
+
+      if (isCompany) {
+        if (formTitle) formTitle.textContent = 'Criar conta da empresa';
+        if (formSubtitle) formSubtitle.textContent = 'Preencha os dados da empresa para começar.';
+        if (emailLabel) emailLabel.textContent = 'E-mail corporativo';
+        if (emailInput) emailInput.placeholder = 'contato@empresa.com.br';
+        if (submitBtn) submitBtn.textContent = 'Criar conta da empresa →';
+        if (welcomeText) welcomeText.textContent = 'Cadastre sua empresa para divulgar vagas, conectar-se a talentos e apoiar o desenvolvimento profissional.';
+        if (welcomeFeatures) {
+          welcomeFeatures.innerHTML = '<div>✓ Divulgação de oportunidades</div><div>✓ Desenvolvimento profissional</div><div>✓ Conexão com novos talentos</div>';
+        }
+      } else {
+        if (formTitle) formTitle.textContent = 'Criar sua conta';
+        if (formSubtitle) formSubtitle.textContent = 'Preencha seus dados para começar.';
+        if (emailLabel) emailLabel.textContent = 'E-mail';
+        if (emailInput) emailInput.placeholder = 'seuemail@exemplo.com';
+        if (submitBtn) submitBtn.textContent = 'Criar minha conta →';
+        if (welcomeText) welcomeText.textContent = 'Crie sua conta e descubra oportunidades de emprego, cursos e desenvolvimento profissional.';
+        if (welcomeFeatures) {
+          welcomeFeatures.innerHTML = '<div>✓ Acesso a oportunidades</div><div>✓ Desenvolvimento profissional</div><div>✓ Novos caminhos para seu futuro</div>';
+        }
+      }
+
+      if (message) {
+        message.textContent = '';
+        message.className = 'form-message';
+      }
+    };
+
+    typeButtons.forEach(btn => {
+      btn.addEventListener('click', () => updateAccountType(btn.dataset.accountType));
+    });
+
+    cnpjInput?.addEventListener('input', event => {
+      event.target.value = formatCnpj(event.target.value);
+    });
+
     registerForm.addEventListener('submit', async event => {
       event.preventDefault();
-      const name = field('name').value.trim().replace(/\s+/g, ' ');
-      const email = field('email').value.trim().toLowerCase();
+      const isCompany = accountType === 'empresa';
+      const name = field('name')?.value.trim().replace(/\s+/g, ' ') || '';
+      const companyName = field('companyName')?.value.trim().replace(/\s+/g, ' ') || '';
+      const cnpjDigits = (cnpjInput?.value || '').replace(/\D/g, '');
+      const email = emailInput.value.trim().toLowerCase();
       const password = field('password').value;
       const confirmation = field('confirmPassword').value;
       const terms = field('terms').checked;
       const fail = text => AP.showMessage(message, text, 'error');
 
-      if (name.length < 3) return fail('Digite seu nome completo.');
+      if (isCompany) {
+        if (companyName.length < 2) return fail('Informe a razão social ou nome da empresa.');
+        if (cnpjDigits.length !== 14) return fail('Informe um CNPJ válido com 14 números.');
+      } else if (name.length < 3) {
+        return fail('Digite seu nome completo.');
+      }
+
       if (!EMAIL_PATTERN.test(email)) return fail('Informe um e-mail válido.');
       if (password.length < 8) return fail('A senha precisa ter pelo menos 8 caracteres.');
       if (password !== confirmation) return fail('As senhas não coincidem.');
@@ -35,14 +116,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const users = AP.getUsers();
       if (users.some(user => user.email === email)) return fail('Este e-mail já possui cadastro. Faça login.');
+      if (isCompany && users.some(user => user.cnpj === cnpjDigits)) {
+        return fail('Este CNPJ já possui cadastro. Faça login.');
+      }
 
       setBusy(registerForm, true);
       try {
-        const user = { id: crypto.randomUUID ? crypto.randomUUID() : `user-${Date.now()}-${Math.random().toString(16).slice(2)}`, name, email, area: '' };
+        const user = {
+          id: crypto.randomUUID ? crypto.randomUUID() : `user-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+          accountType,
+          name: isCompany ? companyName : name,
+          ...(isCompany ? { companyName, cnpj: cnpjDigits } : {}),
+          email,
+          area: ''
+        };
         await AP.setPassword(user, password);
         users.push(user);
         if (!AP.saveUsers(users)) throw new Error('storage');
-        AP.showMessage(message, 'Conta criada com sucesso! Redirecionando para o login...', 'success');
+        AP.showMessage(
+          message,
+          isCompany
+            ? 'Conta da empresa criada com sucesso! Redirecionando para o login...'
+            : 'Conta criada com sucesso! Redirecionando para o login...',
+          'success'
+        );
         setTimeout(() => { location.href = 'login.html?cadastro=ok'; }, 900);
       } catch {
         setBusy(registerForm, false);

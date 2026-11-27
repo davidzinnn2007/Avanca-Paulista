@@ -423,3 +423,30 @@ body{background:var(--surface);color:var(--text);transition:background .25s,colo
 
 .terms a{color:var(--blue);font-weight:800;text-decoration:underline;text-underline-offset:3px}
 .terms a:hover{color:var(--green)}
+
+
+.account-type-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 4px;
+  border-radius: 10px;
+  background: #f1f5f9;
+}
+
+.account-type-btn {
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #334155;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.account-type-btn.is-active {
+  background: #0d3f70;
+  color: #ffffff;
+}
