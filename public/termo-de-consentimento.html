@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Termo de Consentimento para Tratamento de Dados Pessoais - Plataforma Avança Paulista">
+  <title>Termo de Consentimento | Avança Paulista</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <style>
+    :root {
+      --cor-primaria: #0f4c81;
+      --cor-primaria-escura: #0a355c;
+      --cor-primaria-suave: #e8f1f8;
+      --cor-fundo: #f4f6f9;
+      --cor-superficie: #ffffff;
+      --cor-texto-principal: #1e293b;
+      --cor-texto-secundario: #475569;
+      --cor-borda: #cbd5e1;
+      --cor-sucesso: #15803d;
+      --cor-sucesso-fundo: #dcfce7;
+      --cor-erro: #b91c1c;
+      --sombra-cartao: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+      --raio-borda: 12px;
+      --transicao-padrao: 0.2s ease-in-out;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto-principal);
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cabecalho {
+      background-color: var(--cor-primaria);
+      color: var(--cor-superficie);
+      padding: 1.5rem 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .cabecalho-conteudo {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .marca {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      color: var(--cor-superficie);
+    }
+
+    .etiqueta-versao {
+      background-color: rgba(255, 255, 255, 0.16);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+    }
+
+    .container-principal {
+      flex: 1;
+      width: 100%;
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .cartao-documento {
+      background-color: var(--cor-superficie);
+      border-radius: var(--raio-borda);
+      box-shadow: var(--sombra-cartao);
+      border: 1px solid var(--cor-borda);
+      overflow: hidden;
+    }
+
+    .cabecalho-documento {
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid var(--cor-borda);
+      background-color: var(--cor-primaria-suave);
+    }
+
+    .titulo-documento {
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: var(--cor-primaria-escura);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitulo-documento {
+      font-size: 0.9375rem;
+      color: var(--cor-texto-secundario);
+    }
+
+    .conteudo-termo {
+      padding: 2rem;
+      max-height: 440px;
+      overflow-y: auto;
+      border-bottom: 1px solid var(--cor-borda);
+    }
+
+    .clausula {
+      margin-bottom: 1.5rem;
+    }
+
+    .clausula:last-child {
+      margin-bottom: 0;
+    }
+
+    .titulo-clausula {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--cor-primaria-escura);
+      margin-bottom: 0.5rem;
+    }
+
+    .texto-clausula {
+      font-size: 0.9375rem;
+      color: var(--cor-texto-secundario);
+      margin-bottom: 0.5rem;
+    }
+
+    .lista-dados {
+      padding-left: 1.25rem;
+      color: var(--cor-texto-secundario);
+      font-size: 0.9375rem;
+    }
+
+    .lista-dados li {
+      margin-bottom: 0.35rem;
+    }
+
+    .area-aceite {
+      padding: 1.75rem 2rem;
+      background-color: #fafbfd;
+    }
+
+    .grupo-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      cursor: pointer;
+    }
+
+    .campo-checkbox {
+      width: 1.15rem;
+      height: 1.15rem;
+      margin-top: 0.2rem;
+      accent-color: var(--cor-primaria);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .rotulo-checkbox {
+      font-size: 0.9375rem;
+      color: var(--cor-texto-principal);
+      user-select: none;
+    }
+
+    .mensagem-feedback {
+      display: none;
+      padding: 0.875rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    .mensagem-feedback.visivel {
+      display: block;
+    }
+
+    .mensagem-feedback.sucesso {
+      background-color: var(--cor-sucesso-fundo);
+      color: var(--cor-sucesso);
+      border: 1px solid #86efac;
+    }
+
+    .mensagem-feedback.erro {
+      background-color: #fee2e2;
+      color: var(--cor-erro);
+      border: 1px solid #fca5a5;
+    }
+
+    .grupo-acoes {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.875rem;
+      flex-wrap: wrap;
+    }
+
+    .botao {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color var(--transicao-padrao), opacity var(--transicao-padrao);
+    }
+
+    .botao:focus-visible {
+      outline: 3px solid rgba(15, 76, 129, 0.35);
+      outline-offset: 2px;
+    }
+
+    .botao-secundario {
+      background-color: transparent;
+      color: var(--cor-texto-secundario);
+      border: 1px solid var(--cor-borda);
+    }
+
+    .botao-secundario:hover {
+      background-color: #f1f5f9;
+      color: var(--cor-texto-principal);
+    }
+
+    .botao-primario {
+      background-color: var(--cor-primaria);
+      color: var(--cor-superficie);
+    }
+
+    .botao-primario:hover:not(:disabled) {
+      background-color: var(--cor-primaria-escura);
+    }
+
+    .botao-primario:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .rodape {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.8125rem;
+      color: var(--cor-texto-secundario);
+    }
+
+    @media (max-width: 640px) {
+      .cabecalho-documento,
+      .conteudo-termo,
+      .area-aceite {
+        padding: 1.25rem;
+      }
+
+      .titulo-documento {
+        font-size: 1.35rem;
+      }
+
+      .grupo-acoes {
+        flex-direction: column-reverse;
+      }
+
+      .botao {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="cabecalho-conteudo">
+      <a href="/" class="marca">Avança Paulista</a>
+      <span class="etiqueta-versao">Versão 1.0 - LGPD</span>
+    </div>
+  </header>
+
+  <main class="container-principal">
+    <article class="cartao-documento" aria-labelledby="titulo-principal">
+      <header class="cabecalho-documento">
+        <h1 id="titulo-principal" class="titulo-documento">Termo de Consentimento para Tratamento de Dados Pessoais</h1>
+        <p class="subtitulo-documento">Em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018)</p>
+      </header>
+
+      <div class="conteudo-termo" tabindex="0" aria-label="Texto integral do termo de consentimento">
+        <section class="clausula">
+          <h2 class="titulo-clausula">1. Objeto e Finalidade do Tratamento</h2>
+          <p class="texto-clausula">
+            Ao aceitar este termo, o titular autoriza a plataforma Avança Paulista a realizar o tratamento de seus dados pessoais com a finalidade exclusiva de intermediação de oportunidades de emprego, divulgação de cursos de capacitação profissional e conexão com empresas parceiras recrutadoras.
+          </p>
+        </section>
+
+        <section class="clausula">
+          <h2 class="titulo-clausula">2. Dados Pessoais Coletados</h2>
+          <p class="texto-clausula">Para a prestação adequada dos serviços da plataforma, poderão ser coletados e tratados os seguintes dados:</p>
+          <ul class="lista-dados">
+            <li>Dados de identificação civil: nome completo, data de nascimento e documento de identificação;</li>
+            <li>Dados de contato: endereço de e-mail, número de telefone e bairro ou município de residência;</li>
+            <li>Dados profissionais e acadêmicos: histórico escolar, cursos concluídos, experiências anteriores, habilidades técnicas e currículo anexado;</li>
+            <li>Dados de acesso: registros de autenticação, endereço IP e preferências de navegação na plataforma.</li>
+          </ul>
+        </section>
+
+        <section class="clausula">
+          <h2 class="titulo-clausula">3. Compartilhamento de Informações</h2>
+          <p class="texto-clausula">
+            As informações curriculares e de contato do candidato serão compartilhadas exclusivamente com empregadores e instituições de ensino cadastrados na plataforma quando houver candidatura voluntária a uma vaga ou inscrição em curso, sendo vedada a comercialização de dados com terceiros.
+          </p>
+        </section>
+
+        <section class="clausula">
+          <h2 class="titulo-clausula">4. Armazenamento e Segurança</h2>
+          <p class="texto-clausula">
+            Os dados pessoais são armazenados em ambiente controlado e protegidos por medidas técnicas e administrativas aptas a prevenir acessos não autorizados, perda, alteração ou divulgação indevida, permanecendo retidos apenas pelo período necessário ao cumprimento das finalidades descritas.
+          </p>
+        </section>
+
+        <section class="clausula">
+          <h2 class="titulo-clausula">5. Direitos do Titular</h2>
+          <p class="texto-clausula">
+            O titular poderá, a qualquer momento, solicitar a confirmação da existência de tratamento, o acesso aos seus dados, a correção de informações incompletas ou desatualizadas, a portabilidade ou a revogação deste consentimento com a consequente eliminação de seu cadastro por meio das configurações da conta.
+          </p>
+        </section>
+      </div>
+
+      <form id="formulario-consentimento" class="area-aceite" novalidate>
+        <div class="grupo-checkbox">
+          <input type="checkbox" id="caixa-aceite" class="campo-checkbox" required>
+          <label for="caixa-aceite" class="rotulo-checkbox">
+            Declaro que li, compreendi e concordo integralmente com os termos e condições de tratamento dos meus dados pessoais para fins de busca de emprego e capacitação profissional.
+          </label>
+        </div>
+
+        <div id="area-feedback" class="mensagem-feedback" role="status" aria-live="polite"></div>
+
+        <div class="grupo-acoes">
+          <a href="/cadastro" class="botao botao-secundario">Voltar ao Cadastro</a>
+          <button type="submit" id="botao-confirmar" class="botao botao-primario" disabled>Confirmar Consentimento</button>
+        </div>
+      </form>
+    </article>
+  </main>
+
+  <footer class="rodape">
+    <p>Avança Paulista - Plataforma de Oportunidades Profissionais e Capacitação</p>
+  </footer>
+
+  <script>
+    (function () {
+      const CHAVE_ARMAZENAMENTO = "avanca_paulista_consentimento_lgpd";
+      const VERSAO_TERMO = "1.0";
+
+      const formulario = document.getElementById("formulario-consentimento");
+      const caixaAceite = document.getElementById("caixa-aceite");
+      const botaoConfirmar = document.getElementById("botao-confirmar");
+      const areaFeedback = document.getElementById("area-feedback");
+
+      function atualizarEstadoBotao() {
+        botaoConfirmar.disabled = !caixaAceite.checked;
+      }
+
+      function exibirFeedback(texto, tipo) {
+        areaFeedback.textContent = texto;
+        areaFeedback.className = "mensagem-feedback visivel " + tipo;
+      }
+
+      function registrarConsentimento() {
+        const registro = {
+          aceito: true,
+          versao: VERSAO_TERMO,
+          dataHora: new Date().toISOString()
+        };
+
+        localStorage.setItem(CHAVE_ARMAZENAMENTO, JSON.stringify(registro));
+      }
+
+      function carregarConsentimentoAnterior() {
+        const dadosSalvos = localStorage.getItem(CHAVE_ARMAZENAMENTO);
+        if (!dadosSalvos) {
+          return;
+        }
+
+        try {
+          const registro = JSON.parse(dadosSalvos);
+          if (registro.aceito && registro.versao === VERSAO_TERMO) {
+            caixaAceite.checked = true;
+            atualizarEstadoBotao();
+            exibirFeedback("Consentimento já registrado anteriormente nesta sessão.", "sucesso");
+          }
+        } catch (erro) {
+          localStorage.removeItem(CHAVE_ARMAZENAMENTO);
+        }
+      }
+
+      function lidarComEnvio(evento) {
+        evento.preventDefault();
+
+        if (!caixaAceite.checked) {
+          exibirFeedback("É necessário marcar a caixa de seleção para confirmar o consentimento.", "erro");
+          return;
+        }
+
+        registrarConsentimento();
+        exibirFeedback("Consentimento registrado com sucesso. Redirecionando para o cadastro...", "sucesso");
+        botaoConfirmar.disabled = true;
+
+        setTimeout(function () {
+                   window.location.href = "/cadastro";
+        }, 1500);
+      }
+
+      caixaAceite.addEventListener("change", atualizarEstadoBotao);
+      formulario.addEventListener("submit", lidarComEnvio);
+      carregarConsentimentoAnterior();
+    })();
+  </script>
+</body>
+</html>

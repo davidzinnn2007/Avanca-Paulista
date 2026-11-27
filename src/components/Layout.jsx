@@ -150,10 +150,15 @@ export function Footer() {
         className="brand-mark"
       />
 
-      <p>
-        © {new Date().getFullYear()} AVANÇA PAULISTA.
-        Projeto independente e demonstrativo.
-      </p>
+      <div className="footer-information">
+        <p>
+          © {new Date().getFullYear()} AVANÇA PAULISTA.
+          Projeto independente e demonstrativo.
+        </p>
+        <a className="footer-consent-link" href="/termo-de-consentimento.html">
+          Termo de consentimento e privacidade
+        </a>
+      </div>
 
     </footer>
   );
