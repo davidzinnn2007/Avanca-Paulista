@@ -16,9 +16,14 @@
 </p>
 
 <p align="center">
+  🔗 <strong>Demonstração online:</strong> <a href="https://SEU-PROJETO.vercel.app">https://SEU-PROJETO.vercel.app</a>
+</p>
+
+<p align="center">
   <a href="#visão-geral">Visão geral</a> •
   <a href="#funcionalidades">Funcionalidades</a> •
   <a href="#tecnologias">Tecnologias</a> •
+  <a href="#demonstração-das-telas">Telas</a> •
   <a href="#instalação">Instalação</a> •
   <a href="#equipe">Equipe</a>
 </p>
@@ -53,27 +58,67 @@ As imagens acima fazem parte dos recursos visuais presentes no repositório. A a
 |---|---|
 | Página inicial | Apresentação da plataforma, seções de destaque e acesso às principais áreas. |
 | Oportunidades | Listagem demonstrativa, pesquisa por texto, filtros por categoria e opção de salvar itens. |
+| Comunidade | Criação, edição e exclusão de publicações, curtidas, comentários, busca e filtros por categoria. |
 | Cursos | Página de apresentação de conteúdos e áreas de capacitação. |
 | Sobre | Apresentação da proposta, objetivos e etapas relacionadas ao projeto. |
 | Cadastro | Criação de conta demonstrativa com validação de nome, e-mail, senha e aceite dos termos. |
 | Login | Entrada em uma conta criada no próprio navegador e opção de lembrar a sessão. |
 | Recuperação de senha | Redefinição demonstrativa utilizando os dados locais do navegador. |
 | Minha área | Edição do nome e da área de interesse, consulta e remoção de oportunidades salvas e encerramento da sessão. |
+| Termo de Consentimento | Página com o termo de tratamento de dados pessoais (LGPD), acessível pelo rodapé, pelo login e pelo cadastro. |
 | Preferências visuais | Alternância entre tema claro e escuro, com preferência armazenada localmente. |
 
 **Importante:** as oportunidades e empresas exibidas na versão atual são dados demonstrativos. Não devem ser consideradas vagas reais ou ofertas verificadas.
 
 ## Demonstração das telas
 
-As imagens de `assets/1.jpg` a `assets/5.jpg` são recursos visuais utilizados pelo projeto, não capturas de tela de todas as funcionalidades. Para apresentar telas reais nesta seção, adicione capturas feitas durante a execução da aplicação, por exemplo em `docs/screenshots/`, e atualize os caminhos abaixo.
-
-<!--
-Exemplo para inserir capturas reais:
+### Página inicial
 
 <p align="center">
-  <img src="docs/screenshots/home.png" alt="Página inicial" width="80%" />
+  <img src="docs/screenshots/home.png" alt="Página inicial do AVANÇA PAULISTA" width="90%" />
 </p>
--->
+
+### Oportunidades
+
+Listagem com busca por texto, filtros por categoria e opção de salvar vagas.
+
+<p align="center">
+  <img src="docs/screenshots/oportunidades.png" alt="Listagem de oportunidades com busca e filtros" width="90%" />
+</p>
+
+### Comunidade
+
+Publicações com curtidas, comentários, edição e filtros por categoria.
+
+<p align="center">
+  <img src="docs/screenshots/comunidade.png" alt="Publicações da comunidade" width="90%" />
+</p>
+
+### Cadastro e login
+
+<table align="center">
+  <tr>
+    <td align="center"><img src="docs/screenshots/cadastro.png" alt="Tela de cadastro" width="100%" /><br /><sub>Cadastro</sub></td>
+    <td align="center"><img src="docs/screenshots/login.png" alt="Tela de login" width="100%" /><br /><sub>Login</sub></td>
+  </tr>
+</table>
+
+### Minha área e Termo de Consentimento
+
+<table align="center">
+  <tr>
+    <td align="center"><img src="docs/screenshots/dashboard.png" alt="Painel Minha área" width="100%" /><br /><sub>Minha área</sub></td>
+    <td align="center"><img src="docs/screenshots/termo.png" alt="Termo de Consentimento" width="100%" /><br /><sub>Termo de Consentimento</sub></td>
+  </tr>
+</table>
+
+### Versão mobile
+
+<p align="center">
+  <img src="docs/screenshots/mobile-home.png" alt="Página inicial no celular" width="24%" />
+  <img src="docs/screenshots/mobile-oportunidades.png" alt="Oportunidades no celular" width="24%" />
+  <img src="docs/screenshots/mobile-comunidade.png" alt="Comunidade no celular" width="24%" />
+</p>
 
 ## Tecnologias
 
@@ -93,10 +138,14 @@ Exemplo para inserir capturas reais:
 
 ```text
 Avanca-Paulista/
+├── docs/
+│   └── screenshots/
 ├── public/
-│   └── assets/
-│       ├── favicon.svg
-│       └── logo-avanca-paulista.png
+│   ├── assets/
+│   │   ├── 1.jpg ... 5.jpg
+│   │   ├── favicon.svg
+│   │   └── logo-avanca-paulista.png
+│   └── termo-de-consentimento.html
 ├── src/
 │   ├── components/
 │   │   └── Layout.jsx
@@ -106,6 +155,7 @@ Avanca-Paulista/
 │   ├── pages/
 │   │   ├── About.jsx
 │   │   ├── AuthPages.jsx
+│   │   ├── Community.jsx
 │   │   ├── Courses.jsx
 │   │   ├── Dashboard.jsx
 │   │   ├── Home.jsx
@@ -127,6 +177,7 @@ Avanca-Paulista/
 ├── index.html
 ├── package.json
 ├── package-lock.json
+├── LICENSE
 ├── README.md
 └── README-REACT.md
 ```
@@ -197,12 +248,14 @@ npm run preview
 |---|---|---|
 | `/` | Página inicial | Público |
 | `/oportunidades` | Oportunidades | Público |
+| `/comunidade` | Comunidade | Público (interações exigem login) |
 | `/cursos` | Cursos | Público |
 | `/sobre` | Sobre | Público |
 | `/login` | Entrar | Visitantes |
 | `/cadastro` | Criar conta | Visitantes |
 | `/recuperar-senha` | Recuperar acesso | Visitantes |
 | `/dashboard` | Minha área | Requer autenticação local |
+| `/termo-de-consentimento.html` | Termo de Consentimento | Público |
 
 Rotas desconhecidas exibem uma página de erro com opção para retornar ao início.
 
@@ -266,7 +319,7 @@ Não versione a pasta `node_modules/` nem arquivos locais que contenham dados pe
 
 ## Licença
 
-Nenhuma licença de uso foi identificada na documentação atual. Até que uma licença seja definida e adicionada ao repositório, não presuma permissões de redistribuição ou reutilização do código.
+Consulte o arquivo [LICENSE](LICENSE) para os termos de uso do código.
 
 ---
 
