@@ -16,6 +16,7 @@ import Opportunities from './pages/Opportunities';
 import Courses from './pages/Courses';
 import About from './pages/About';
 import Dashboard from './pages/Dashboard';
+import Community from './pages/Community';
 
 import {
   Login,
@@ -55,6 +56,11 @@ function App() {
       <Route
         path="/oportunidades"
         element={<SiteLayout><Opportunities /></SiteLayout>}
+      />
+
+      <Route
+        path="/comunidade"
+        element={<SiteLayout><Community /></SiteLayout>}
       />
 
       <Route
