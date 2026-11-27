@@ -24,7 +24,9 @@ body.is-leaving{animation:leave .22s ease forwards;pointer-events:none}
 .logo span{color:var(--yellow)}
 .nav{display:flex;align-items:center;justify-content:center;gap:25px}
 .nav a,.login-link{color:rgba(255,255,255,.9);font-size:14px;font-weight:700;transition:color .2s}
-.nav a:hover,.nav a.active-link,.login-link:hover{color:var(--yellow)}
+.nav a{position:relative;padding:10px 0}
+.nav a:hover,.nav a.active,.nav a.active-link,.login-link:hover{color:var(--yellow)}
+.nav a.active::after,.nav a.active-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:3px;background:var(--yellow)}
 .header-actions{display:flex;align-items:center;gap:17px}
 
 /* Botões */
@@ -781,7 +783,7 @@ button.opportunity-link[aria-pressed="true"]{color:var(--green)}
 .header .logo,.header .logo .logo-text,.header .logo .logo-text strong{color:#fff}
 .header .logo .logo-text strong{color:var(--yellow)}
 .header .nav a,.header .login-link{color:rgba(255,255,255,.92)}
-.header .nav a:hover,.header .nav a.active-link,.header .login-link:hover{color:var(--yellow)}
+.header .nav a:hover,.header .nav a.active,.header .nav a.active-link,.header .login-link:hover{color:var(--yellow)}
 .header .theme-toggle{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.32);color:#fff}
 .header .menu-toggle{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.32);color:#fff}
 .footer .logo .brand-mark{width:140px;height:70px}
@@ -948,7 +950,10 @@ body { transition: background-color .25s ease, color .25s ease; }
   .header .nav a,
   :root[data-theme="dark"] .header .nav a { color: #FFFFFF; }
   .header .nav a:hover,
+  .header .nav a.active,
   .header .nav a.active-link { color: var(--yellow); background: rgba(255,255,255,.08); }
+  .header .nav a.active::after,
+  .header .nav a.active-link::after { left:13px;right:auto;bottom:7px;width:calc(100% - 26px) }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
