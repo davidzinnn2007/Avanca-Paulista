@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  🔗 <strong>Demonstração online:</strong> <a href="https://avanca-paulista.vercel.app/">https://SEU-PROJETO.vercel.app</a>
+  🔗 <strong>Demonstração online:</strong> <a href="https://avanca-paulista.vercel.app/">https://avanca-paulista.vercel.app/</a>
 </p>
 
 <p align="center">
