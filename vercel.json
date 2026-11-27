@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/((?!assets/|termo-de-consentimento.html).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
