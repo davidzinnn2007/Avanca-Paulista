@@ -30,3 +30,9 @@ npm run preview
 
 ## Observação de segurança
 Esta versão é front-end demonstrativa. Os dados ficam no navegador e não substituem autenticação de produção. Para produção, implemente uma API, banco de dados, hash de senhas no servidor, sessões seguras e fluxo real de recuperação de senha. A recuperação local não comprova a identidade do usuário.
+
+## Comunidade AVANÇA
+- Acesse `/comunidade` pelo menu principal.
+- Visitantes podem consultar publicações; login é necessário para publicar, comentar e curtir.
+- Publicações, curtidas, comentários e denúncias são armazenados no `localStorage` deste navegador.
+- A versão atual é demonstrativa e não sincroniza usuários/dispositivos. Para produção, mova persistência, autorização, validação e moderação para uma API com banco de dados.

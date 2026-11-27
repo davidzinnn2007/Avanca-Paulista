@@ -66,6 +66,13 @@ export function Header() {
           </NavLink>
 
           <NavLink
+            to="/comunidade"
+            onClick={() => setOpen(false)}
+          >
+            Comunidade
+          </NavLink>
+
+          <NavLink
             to="/cursos"
             onClick={() => setOpen(false)}
           >
