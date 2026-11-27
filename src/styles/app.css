@@ -371,3 +371,55 @@ body{background:var(--surface);color:var(--text);transition:background .25s,colo
 @media(max-width:850px){.community-layout{grid-template-columns:1fr}.community-sidebar{position:static}.community-categories{grid-template-columns:repeat(2,minmax(0,1fr))}.community-guideline{margin-top:15px}.community-toolbar{align-items:stretch;flex-direction:column}.community-search{min-width:0}}
 @media(max-width:560px){.community-hero{padding:58px 20px 62px}.community-content{padding:42px 16px 60px}.community-heading-row{align-items:flex-start;flex-direction:column}.community-total{padding:8px 12px}.community-tabs{display:grid;grid-template-columns:1fr 1fr}.community-tabs button{padding:10px 7px;font-size:12px}.community-tabs button:last-child{grid-column:1/-1}.community-post{padding:17px}.community-post-top{align-items:flex-start}.community-category-tag{font-size:9px}.community-post-menu button{padding:2px}.community-post h4{font-size:1rem}.community-categories{grid-template-columns:1fr 1fr}.community-composer{padding:18px}.community-form-footer{align-items:flex-start;flex-direction:column}.community-form-footer .community-primary-button{width:100%}.community-comment-form{align-items:stretch}.community-comment-form button{padding:0 10px}}
 @media(prefers-reduced-motion:reduce){.community-hero-button,.community-primary-button{transition:none}}
+
+
+/* Acesso ao termo de consentimento */
+.footer-information {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px 22px;
+}
+
+.footer-consent-link,
+.consent-login-link a {
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-consent-link {
+  color: var(--yellow);
+}
+
+.footer-consent-link:hover {
+  color: var(--white);
+}
+
+.consent-login-link a {
+  color: var(--blue);
+}
+
+.consent-login-link a:hover {
+  color: var(--green);
+}
+
+.consent-login-link {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .footer-information {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.terms a{color:var(--blue);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.terms a:hover{color:var(--green)}
