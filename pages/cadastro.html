@@ -28,12 +28,12 @@
 
         <h1>Seu futuro começa com uma <span>nova oportunidade.</span></h1>
 
-        <p>
+        <p id="welcomeText">
             Crie sua conta e descubra oportunidades de emprego,
             cursos e desenvolvimento profissional.
         </p>
 
-        <div class="features">
+        <div class="features" id="welcomeFeatures">
             <div>✓ Acesso a oportunidades</div>
             <div>✓ Desenvolvimento profissional</div>
             <div>✓ Novos caminhos para seu futuro</div>
@@ -43,8 +43,8 @@
     <section class="form-card">
 
         <div class="form-header">
-            <h2>Criar sua conta</h2>
-            <p>Preencha seus dados para começar.</p>
+            <h2 id="formTitle">Criar sua conta</h2>
+            <p id="formSubtitle">Preencha seus dados para começar.</p>
         </div>
 
         <div class="demo-notice">
@@ -52,25 +52,63 @@
             <span>Os dados ficam apenas neste navegador. Não use uma senha real.</span>
         </div>
 
-        <form id="registerForm">
+        <form id="registerForm" novalidate>
 
-            <div class="input-group">
-                <label for="name">Nome completo</label>
-                <input
-                    type="text"
-                    id="name"
-                    autocomplete="name"
-                    placeholder="Digite seu nome completo"
-                    required
-                    minlength="3"
-                >
+            <div class="account-type-switch" role="group" aria-label="Tipo de conta">
+                <button type="button" class="account-type-btn is-active" data-account-type="candidato">
+                    Candidato
+                </button>
+                <button type="button" class="account-type-btn" data-account-type="empresa">
+                    Empresa
+                </button>
+            </div>
+
+            <!-- Campos para Candidato -->
+            <div id="candidateFields">
+                <div class="input-group">
+                    <label for="name">Nome completo</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        placeholder="Digite seu nome completo"
+                        minlength="3"
+                    >
+                </div>
+            </div>
+
+            <!-- Campos para Empresa -->
+            <div id="companyFields" hidden>
+                <div class="input-group">
+                    <label for="companyName">Razão social / Nome da empresa</label>
+                    <input
+                        type="text"
+                        id="companyName"
+                        name="companyName"
+                        placeholder="Digite o nome ou razão social da empresa"
+                        minlength="2"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="cnpj">CNPJ</label>
+                    <input
+                        type="text"
+                        id="cnpj"
+                        name="cnpj"
+                        inputmode="numeric"
+                        placeholder="00.000.000/0000-00"
+                    >
+                </div>
             </div>
 
             <div class="input-group">
-                <label for="email">E-mail</label>
+                <label for="email" id="emailLabel">E-mail</label>
                 <input
                     type="email"
                     id="email"
+                    name="email"
                     autocomplete="email"
                     placeholder="seuemail@exemplo.com"
                     required
@@ -82,6 +120,7 @@
                 <input
                     type="password"
                     id="password"
+                    name="password"
                     autocomplete="new-password"
                     placeholder="Mínimo de 8 caracteres"
                     required
@@ -94,6 +133,7 @@
                 <input
                     type="password"
                     id="confirmPassword"
+                    name="confirmPassword"
                     autocomplete="new-password"
                     placeholder="Digite sua senha novamente"
                     required
@@ -101,7 +141,7 @@
             </div>
 
             <label class="terms">
-                <input type="checkbox" id="terms" required>
+                <input type="checkbox" id="terms" name="terms" required>
                 <span>
                     Li e concordo com o
                     <a href="termo-de-consentimento.html" target="_blank" rel="noopener">Termo de Consentimento</a>
@@ -111,11 +151,9 @@
 
             <p id="formMessage" class="form-message" aria-live="polite"></p>
 
-            <button type="submit" class="submit-button">
+            <button type="submit" class="submit-button" id="submitBtn">
                 Criar minha conta →
             </button>
-
-
 
         </form>
 
